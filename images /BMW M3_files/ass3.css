@@ -1,0 +1,225 @@
+:root{
+    --main-radius: 5px;
+    --main-padding: 5px;
+    --orange: #ffa500;
+}
+body {
+    font-family: Lato, sans-serif;
+    margin: 0;
+    background-color: #232e33;
+}
+.container{
+    display: grid;
+    height: 150vh;
+    width: 100%;
+    overflow: hidden;
+    grid-template-columns: 19% 26% 26% 26% 3% 1fr;
+    grid-template-rows: 45% 5% 40% 10% 1fr;
+    grid-template-areas: 
+    "sidebar main main main"
+    "sidebar nav nav nav"
+    "sidebar content1 content2 content3"
+    "sidebar footer footer footer";
+    grid-gap: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+
+}
+nav {
+    background: rgb(198, 90, 75);
+    grid-area: nav;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+.main {
+    display: grid;
+    grid-area: main;
+    background-image: url("./images /bmw4.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    grid-template-columns: 1fr;
+    grid-template-rows: 75% 1fr;
+    grid-template-areas: 
+    "heading"
+    "writing";
+    
+    }
+#writing{
+    grid-area: writing;
+    display: grid;
+}
+p   {
+    font-size: 12pt;
+    color: white;
+    text-align: left;
+}
+.sidebar{
+    display: grid;
+    grid-gap: 3em;
+    background: rgb(213, 67, 54);
+    grid-area: sidebar;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    grid-template-columns: 1fr;
+    grid-template-rows: 15% 1fr ;
+    grid-template-areas: 
+    "logo"
+    "links";
+}
+
+#links{
+    grid-area: links;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 10% 10% 10% 10% 1fr;
+}
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 18pt;
+    margin: 0;
+    text-align: left;
+}
+a::after {
+    content:'';
+    position: absolute;
+    display: block;
+    height: 0.2em;
+    width: 0%;
+    background-color: var(--orange);
+}
+a:hover::after{
+    width: 5%;
+
+}
+
+.logo {
+        grid-area: logo;
+        width: 265px; 
+        height: 190px; 
+        border-radius:  300px;
+        display: grid;
+        grid-template-columns: 0.5fr;
+        grid-template-rows: 5% 1fr;
+        grid-template-areas:
+        "mlogo";
+        
+}
+#mlogo{
+    grid-area: mlogo;
+    display: grid;
+    height: 44%;
+
+img {
+        height: 42%;
+        
+    }
+}
+
+    
+
+#content1{
+    background: rgb(125, 133, 142);
+    grid-area: content1;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    text-transform: none;
+    color: rgb(255, 180, 59);
+    font-size: 11pt;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1 fr;
+    grid-template-rows: 10% 40% 10% 1fr;
+    grid-template-areas: 
+    "heading"
+    "figure"
+    "paragraph";
+
+}
+.heading{
+    grid-area: heading;
+}
+.figure{
+    grid-area: figure;
+img {
+    max-width: 100%;
+    
+}
+}
+.paragraph{
+    grid-area: paragraph;
+    max-width: 100%;
+    max-height: 100%;
+    
+    
+}
+#content2{
+    background: rgb(125, 133, 142);
+    grid-area: content2;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    text-transform: none;
+    color: rgb(255, 180, 59);
+    font-size: 11pt;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1 fr;
+    grid-template-rows: 10% 40% 1fr;
+    grid-template-areas: 
+    "heading"
+    "figure"
+    "paragraph";
+
+}
+#content3{
+    background: rgb(125, 133, 142);
+    grid-area: content3;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    text-transform: none;
+    color: rgb(255, 180, 59);
+    font-size: 11pt;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1 fr;
+    grid-template-rows: 10% 40% 1fr;
+    grid-template-areas: 
+    "heading"
+    "figure"
+    "paragraph";
+}
+footer{
+    background: rgb(198, 90, 75);
+    grid-area: footer;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+@media only screen and (max-width: 600px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.7fr 4fr 0.7fr 3fr 3fr 3fr 0.7fr;
+        grid-template-areas: 
+        "sidebar"
+        "main"
+        "nav"
+        "content1"
+        "content2"
+        "content3"
+        "footer";
+    }
+}
+
+span{
+    font-size: 40pt;
+    padding-left: 5%;
+    color: white;
+    text-align: left;
+}
+figure{
+    height: 10%;
+}

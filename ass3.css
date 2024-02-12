@@ -1,0 +1,279 @@
+:root{
+    --main-radius: 5px;
+    --main-padding: 5px;
+    --orange: #ffa500;
+}
+body {
+    font-family: Lato, sans-serif;
+    margin: 0;
+    background-color: #232e33;
+}
+.container{
+    display: grid;
+    height: 150vh;
+    max-width: 100%;
+    overflow: hidden;
+    grid-template-columns: 19% 26% 26% 26% 3% 1fr;
+    grid-template-rows: 45% 5% 40% 10% 1fr;
+    grid-template-areas: 
+    "sidebar main main main"
+    "sidebar searchbar searchbar searchbar"
+    "sidebar content1 content2 content3"
+    "sidebar footer footer footer";
+    grid-gap: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+
+}
+.searchbar {
+    background: rgb(198, 90, 75);
+    grid-area: searchbar;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    display: grid;
+    grid-template-rows: 40% 1fr;
+   
+}
+#search{
+    color: white;
+    justify-self: left;
+    
+}
+#bar{
+    color: rgb(3, 3, 3);
+    justify-self: center
+}
+
+.main {
+    display: grid;
+    grid-area: main;
+    background-image: url("./images /bmw4.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    grid-template-columns: 1fr;
+    grid-template-rows: 75% 1fr;
+    grid-template-areas: 
+    "heading"
+    "writing";
+    
+    }
+#writing{
+    grid-area: writing;
+    display: grid;
+}
+p   {
+    font-size: 12pt;
+    color: white;
+    text-align: left;
+}
+.sidebar{
+    display: grid;
+    max-width: 100%;
+    grid-gap: 3em;
+    background: rgb(213, 67, 54);
+    grid-area: sidebar;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    grid-template-columns: 1fr;
+    grid-template-rows: 15% 10% 10% 10% 10% 1fr ;
+    grid-template-areas: 
+    "logo"
+    "home"
+    "models"
+    "buynow"
+    "book"
+    "sales";
+}
+#home {
+    grid-area: home;
+    display: grid;
+}
+#models {
+    grid-area: models;
+    display: grid;
+}
+#buynow {
+    grid-area: buynow;
+    display: grid;
+}
+#book {
+    grid-area: book;
+    display: grid;
+}
+#sales {
+    grid-area: sales;
+    display: grid;
+}
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 18pt;
+    margin: 0;
+    text-align: left;
+}
+a::after {
+    content:'';
+    position: absolute;
+    display: block;
+    height: 0.2em;
+    width: 0%;
+    background-color: var(--orange);
+}
+a:hover::after{
+    width: 35%;
+
+} 
+
+#logo {
+        grid-area: logo;
+        width: 80%; 
+        height: auto; 
+        border-radius:  300px;       
+}
+
+    
+
+#content1{
+    background: rgb(125, 133, 142);
+    grid-area: content1;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    text-transform: none;
+    color: rgb(255, 180, 59);
+    font-size: 11pt;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1 fr;
+    grid-template-rows: 10% 45% 1fr;
+    max-height: 100%;
+    grid-template-areas: 
+    "heading"
+    "figure"
+    "paragraph";
+
+}
+.heading{
+    grid-area: heading;
+}
+.figure{
+    grid-area: figure;
+img {
+    max-width: 100%;
+    
+}
+}
+.paragraph{
+    grid-area: paragraph;
+    width: 100%;
+    container-type: inline-size;
+    
+}
+.paragraph > p{
+    font-size: 4.1cqi;
+}
+#content2{
+    background: rgb(125, 133, 142);
+    grid-area: content2;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    text-transform: none;
+    color: rgb(255, 180, 59);
+    font-size: 11pt;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1 fr;
+    grid-template-rows: 10% 45% 1fr;
+    grid-template-areas: 
+    "heading"
+    "figure"
+    "paragraph";
+
+}
+#content3{
+    background: rgb(125, 133, 142);
+    grid-area: content3;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    text-transform: none;
+    color: rgb(255, 180, 59);
+    font-size: 11pt;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1 fr;
+    grid-template-rows: 10% 45% 1fr;
+    grid-template-areas: 
+    "heading"
+    "figure"
+    "paragraph";
+}
+footer{
+    background: rgb(198, 90, 75);
+    grid-area: footer;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    display: grid;
+    grid-template-columns: 70% 30% 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "none sns";
+}
+#sns {
+        grid-area: sns;
+    }
+
+    span{
+        font-size: 40pt;
+        padding-left: 5%;
+        color: white;
+        text-align: left;
+        container-type: inline-size;
+    }
+    .fa-twitter {
+        color: aqua
+    }
+    
+    .fa-youtube {
+        color: red
+    }
+    @media only screen and (min-width : 701px) and (max-width: 1280px){
+        .container{
+            height: auto;
+            grid-template-columns: 26% 26% 26% 3% 1fr;
+            grid-template-rows: 10% 4% 5% 45% 10% 1fr;
+            grid-template-areas: 
+            "sidebar sidebar sidebar"
+            "main main main"
+            "searchbar searchbar searchbar"
+            "content1 content2 content3"
+            "footer footer footer";
+        }
+    }
+    
+    @media only screen and (max-width: 700px){
+    .container{
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.7fr 4fr 0.7fr 3fr 3fr 3fr 0.7fr;
+        grid-template-areas: 
+        "sidebar"
+        "main"
+        "searchbar"
+        "content1"
+        "content2"
+        "content3"
+        "footer";
+    }
+.sidebar{
+    grid-area: sidebar;
+    text-align: center;
+    position: relative;
+    grid-template-columns: 20% 20% 20% 20% 20% 1fr;
+    grid-template-rows: 1 fr;
+
+}
+}
+
